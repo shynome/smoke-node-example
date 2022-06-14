@@ -1,7 +1,7 @@
 # how to run
 
 ```sh
-deno bundle https://raw.githubusercontent.com/shynome/smoke-node/master/example/somke.ts smoke.mjs
+deno bundle https://deno.land/x/smoke/example/smoke.ts smoke.mjs
 # start smoke hub
 node ./node_modules/.bin/smoke-hub --port 5000
 # start smoke rest server with browser
@@ -12,15 +12,12 @@ node node.mjs server
 # connect smoke rest server and get hello world from server
 node node.mjs connect 0.0.0.0
 # start smoke rest server with deno (now deno is not support webrtc, so this is not working)
-# deno run https://raw.githubusercontent.com/shynome/smoke-node/master/example/server.ts
+# deno run https://deno.land/x/smoke/example/server.ts
 ```
 
 ```ts
 // somke.ts
-import {
-  Node,
-  NetworkHub,
-} from "https://raw.githubusercontent.com/shynome/smoke-node/master/mod.ts";
+import { Node, NetworkHub } from "https://deno.land/x/smoke/node/mod.ts";
 
 export async function createServer() {
   const hostHub = new NetworkHub("ws://127.0.0.1:5000");
